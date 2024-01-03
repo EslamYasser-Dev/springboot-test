@@ -47,13 +47,11 @@ public class TaskService {
 
     public Task addTask(Task task) {
         StoredProcedureQuery storedProcedureQuery = entityManager.createStoredProcedureQuery("InsertEvent");
-        storedProcedureQuery.registerStoredProcedureParameter("id", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("title", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("note", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("createdAt", java.sql.Timestamp.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("updatedAt", java.sql.Timestamp.class, ParameterMode.IN);
-        storedProcedureQuery.registerStoredProcedureParameter("color", Integer.class, ParameterMode.IN);
-        storedProcedureQuery.setParameter("id", task.getId());
+        storedProcedureQuery.registerStoredProcedureParameter("color", String.class, ParameterMode.IN);
         storedProcedureQuery.setParameter("title", task.getTitle());
         storedProcedureQuery.setParameter("note", task.getNote());
         storedProcedureQuery.setParameter("createdAt", task.getCreatedAt());
