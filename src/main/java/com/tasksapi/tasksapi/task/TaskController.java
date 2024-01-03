@@ -21,10 +21,6 @@ public class TaskController {
         return taskService.getTasks();
     }
 
-    @GetMapping(path = "{taskId}")
-    public Task getTask(@PathVariable("taskId") Integer id) {
-        return taskService.getTask(id);
-    }
 
     @PostMapping
     public Task addTask(@RequestBody Task task) {
@@ -38,6 +34,6 @@ public class TaskController {
 
     @DeleteMapping(path = "{taskId}")
     public void deleteTask(@PathVariable("taskId") Integer id) {
-        taskService.deleteTask(id);
+        taskService.deleteTask(String.valueOf(id));
     }
 }

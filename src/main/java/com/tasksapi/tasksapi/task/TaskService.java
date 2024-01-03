@@ -41,9 +41,7 @@ public class TaskService {
         return tasks;
     }
 
-    public Task getTask(Integer id) {
-        return taskRepository.findById(id).orElse(null);
-    }
+
 
     public Task addTask(Task task) {
         StoredProcedureQuery storedProcedureQuery = entityManager.createStoredProcedureQuery("InsertEvent");
@@ -63,10 +61,26 @@ public class TaskService {
 
 
     public Task updateTask(Task task) {
-        return taskRepository.save(task);
+        StoredProcedureQuery storedProcedureQuery = entityManager.createStoredProcedureQuery("UpdateEvent");
+        storedProcedureQuery.registerStoredProcedureParameter("id", String.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("title", String.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("note", String.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("updatedAt", java.sql.Timestamp.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("color", String.class, ParameterMode.IN);
+        storedProcedureQuery.setParameter("id", task.getId());
+        storedProcedureQuery.setParameter("title", task.getTitle());
+        storedProcedureQuery.setParameter("note", task.getNote());
+        storedProcedureQuery.setParameter("updatedAt", task.getUpdatedAt());
+        storedProcedureQuery.setParameter("color", task.getColor());
+        storedProcedureQuery.execute();
+        return task;
     }
 
-    public void deleteTask(Integer id) {
-        taskRepository.deleteById(id);
+    public void deleteTask(String id) {
+        StoredProcedureQuery storedProcedureQuery = entityManager.createStoredProcedureQuery("DeleteEvent");
+        storedProcedureQuery.registerStoredProcedureParameter("id", String.class, ParameterMode.IN);
+        storedProcedureQuery.setParameter("id", id);
+        storedProcedureQuery.execute();
     }
+
 }
