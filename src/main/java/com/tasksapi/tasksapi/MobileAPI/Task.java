@@ -1,4 +1,4 @@
-package com.tasksapi.tasksapi.task;
+package com.tasksapi.tasksapi.MobileAPI;
 
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedStoredProcedureQuery;

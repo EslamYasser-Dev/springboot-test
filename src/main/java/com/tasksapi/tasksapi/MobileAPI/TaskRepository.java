@@ -1,4 +1,4 @@
-package com.tasksapi.tasksapi.task;
+package com.tasksapi.tasksapi.MobileAPI;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
