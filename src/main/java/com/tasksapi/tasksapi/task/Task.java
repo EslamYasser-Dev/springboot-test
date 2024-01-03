@@ -5,20 +5,19 @@ import jakarta.persistence.NamedStoredProcedureQuery;
 import lombok.Data;
 import jakarta.persistence.Entity;
 
-
 @Data
 @Entity
+@NamedStoredProcedureQuery(
+        name = "GetEvents",
+        procedureName = "GetEvents"
+)
 public class Task {
 
     @Id
-    private Integer id;
+    private String id;
     private String title;
     private String note;
-    private Integer isCompleted;
-    private String date;
-    private String startTime;
-    private String endTime;
-    private Integer color;
-    private Integer remind;
-    private String repeat;
+    private java.sql.Timestamp createdAt;
+    private java.sql.Timestamp updatedAt;
+    private String color;
 }
