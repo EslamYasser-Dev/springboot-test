@@ -1,4 +1,4 @@
-package com.tasksapi.tasksapi.Recurrence;
+package com.tasksapi.tasksapi.wholeDATABASE.Recurrence;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

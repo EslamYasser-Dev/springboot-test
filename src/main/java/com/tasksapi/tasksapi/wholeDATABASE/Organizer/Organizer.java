@@ -1,24 +1,24 @@
-package com.tasksapi.tasksapi.Time;
+package com.tasksapi.tasksapi.wholeDATABASE.Organizer;
 
-import com.tasksapi.tasksapi.Event.Event;
+import com.tasksapi.tasksapi.wholeDATABASE.GoogleCalenderAPI_Integration.Event;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
-import java.util.Date;
-
 @Data
 @Entity
-public class Time {
+public class Organizer {
+
     @Id
     private String id;
-    private Date date;
-    private Date dateTime;
-    private String timeZone;
+    private String email;
+    private String displayName;
+    private Boolean self;
 
     @ManyToOne
     @JoinColumn(name = "eventId")
     private Event event;
 }
+

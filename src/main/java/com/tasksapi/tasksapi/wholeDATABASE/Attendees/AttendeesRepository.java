@@ -1,4 +1,4 @@
-package com.tasksapi.tasksapi.Attendees;
+package com.tasksapi.tasksapi.wholeDATABASE.Attendees;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

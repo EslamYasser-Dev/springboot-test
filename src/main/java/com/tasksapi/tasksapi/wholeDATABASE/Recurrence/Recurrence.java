@@ -1,6 +1,6 @@
-package com.tasksapi.tasksapi.Recurrence;
+package com.tasksapi.tasksapi.wholeDATABASE.Recurrence;
 
-import com.tasksapi.tasksapi.Event.Event;
+import com.tasksapi.tasksapi.wholeDATABASE.GoogleCalenderAPI_Integration.Event;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;

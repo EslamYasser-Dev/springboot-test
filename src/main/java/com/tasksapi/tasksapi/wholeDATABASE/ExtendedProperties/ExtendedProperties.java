@@ -1,6 +1,6 @@
-package com.tasksapi.tasksapi.ExtendedProperties;
+package com.tasksapi.tasksapi.wholeDATABASE.ExtendedProperties;
 
-import com.tasksapi.tasksapi.Event.Event;
+import com.tasksapi.tasksapi.wholeDATABASE.GoogleCalenderAPI_Integration.Event;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;

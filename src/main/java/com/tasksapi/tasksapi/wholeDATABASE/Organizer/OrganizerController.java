@@ -1,4 +1,4 @@
-package com.tasksapi.tasksapi.Organizer;
+package com.tasksapi.tasksapi.wholeDATABASE.Organizer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

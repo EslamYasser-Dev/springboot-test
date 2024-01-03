@@ -1,6 +1,7 @@
 package com.tasksapi.tasksapi.task;
 
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.ParameterMode;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.StoredProcedureQuery;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,8 +46,23 @@ public class TaskService {
     }
 
     public Task addTask(Task task) {
-        return taskRepository.save(task);
+        StoredProcedureQuery storedProcedureQuery = entityManager.createStoredProcedureQuery("InsertEvent");
+        storedProcedureQuery.registerStoredProcedureParameter("id", String.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("title", String.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("note", String.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("createdAt", java.sql.Timestamp.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("updatedAt", java.sql.Timestamp.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("color", Integer.class, ParameterMode.IN);
+        storedProcedureQuery.setParameter("id", task.getId());
+        storedProcedureQuery.setParameter("title", task.getTitle());
+        storedProcedureQuery.setParameter("note", task.getNote());
+        storedProcedureQuery.setParameter("createdAt", task.getCreatedAt());
+        storedProcedureQuery.setParameter("updatedAt", task.getUpdatedAt());
+        storedProcedureQuery.setParameter("color", task.getColor());
+        storedProcedureQuery.execute();
+        return task;
     }
+
 
     public Task updateTask(Task task) {
         return taskRepository.save(task);

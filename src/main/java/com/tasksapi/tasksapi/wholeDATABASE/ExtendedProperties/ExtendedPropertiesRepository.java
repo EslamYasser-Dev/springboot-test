@@ -1,4 +1,4 @@
-package com.tasksapi.tasksapi.ExtendedProperties;
+package com.tasksapi.tasksapi.wholeDATABASE.ExtendedProperties;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,11 +1,11 @@
-package com.tasksapi.tasksapi.Event;
+package com.tasksapi.tasksapi.wholeDATABASE.GoogleCalenderAPI_Integration;
 
-import com.tasksapi.tasksapi.Attendees.Attendees;
-import com.tasksapi.tasksapi.Creator.Creator;
-import com.tasksapi.tasksapi.ExtendedProperties.ExtendedProperties;
-import com.tasksapi.tasksapi.Organizer.Organizer;
-import com.tasksapi.tasksapi.Recurrence.Recurrence;
-import com.tasksapi.tasksapi.Time.Time;
+import com.tasksapi.tasksapi.wholeDATABASE.Attendees.Attendees;
+import com.tasksapi.tasksapi.wholeDATABASE.Creator.Creator;
+import com.tasksapi.tasksapi.wholeDATABASE.ExtendedProperties.ExtendedProperties;
+import com.tasksapi.tasksapi.wholeDATABASE.Organizer.Organizer;
+import com.tasksapi.tasksapi.wholeDATABASE.Recurrence.Recurrence;
+import com.tasksapi.tasksapi.wholeDATABASE.Time.Time;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import lombok.Data;
