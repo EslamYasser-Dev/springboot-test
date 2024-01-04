@@ -23,8 +23,8 @@ public class Task {
     private String startTime;
     private String endTime;
     private String color;
-    private int remind;
+    private Integer remind;
     private String repeat;
-    private int isCompleted;
+    private String isCompleted;
 
 }

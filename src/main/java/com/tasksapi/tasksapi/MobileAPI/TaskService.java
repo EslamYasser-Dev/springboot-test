@@ -36,7 +36,7 @@ public class TaskService {
             task.setColor((String) result[6]);
             task.setRemind((Integer) result[7]);
             task.setRepeat((String) result[8]);
-            task.setIsCompleted((Integer) result[9]);
+            task.setIsCompleted((String) result[9]);
             tasks.add(task);
         }
 
@@ -47,13 +47,13 @@ public class TaskService {
         StoredProcedureQuery storedProcedureQuery = entityManager.createStoredProcedureQuery("InsertTask");
         storedProcedureQuery.registerStoredProcedureParameter("title", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("note", String.class, ParameterMode.IN);
-        storedProcedureQuery.registerStoredProcedureParameter("date", String.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("date", Date.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("startTime", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("endTime", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("color", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("remind", Integer.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("repeat", String.class, ParameterMode.IN);
-        storedProcedureQuery.registerStoredProcedureParameter("isCompleted", Integer.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("isCompleted", String.class, ParameterMode.IN);
         storedProcedureQuery.setParameter("title", task.getTitle());
         storedProcedureQuery.setParameter("note", task.getNote());
         storedProcedureQuery.setParameter("date", task.getDate());
@@ -72,13 +72,13 @@ public class TaskService {
         storedProcedureQuery.registerStoredProcedureParameter("id", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("title", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("note", String.class, ParameterMode.IN);
-        storedProcedureQuery.registerStoredProcedureParameter("date", String.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("date", Date.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("startTime", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("endTime", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("color", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("remind", Integer.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("repeat", String.class, ParameterMode.IN);
-        storedProcedureQuery.registerStoredProcedureParameter("isCompleted", Integer.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("isCompleted", String.class, ParameterMode.IN);
         storedProcedureQuery.setParameter("id", task.getId());
         storedProcedureQuery.setParameter("title", task.getTitle());
         storedProcedureQuery.setParameter("note", task.getNote());
